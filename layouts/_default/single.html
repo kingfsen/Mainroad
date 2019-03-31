@@ -10,11 +10,11 @@
 			<div class="post__meta meta">{{ . }}</div>
 			{{- end }}
 		</header>
-		{{- if .Params.thumbnail }}
+<!--		{{- if .Params.thumbnail }}
 		<figure class="post__thumbnail">
 			<img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
 		</figure>
-		{{- end }}
+		{{- end }} -->
 		{{- partial "post_toc.html" . -}}
 		<div class="content post__content clearfix">
 			{{ .Content }}
@@ -22,7 +22,10 @@
 		{{ partial "post_tags.html" . }}
 	</article>
 </main>
+{{ partial "share.html" . }}
 {{ partial "authorbox.html" . }}
+{{ partial "related.html" . }}
 {{ partial "post_nav.html" . }}
 {{ partial "comments.html" . }}
+{{ partial "isso.html" . }}
 {{ end }}

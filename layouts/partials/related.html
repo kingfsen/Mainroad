@@ -1,0 +1,16 @@
+{{- if .Site.Params.post_related }}
+{{ $related := .Site.RegularPages.Related . | first 10 }}
+{{ with $related }}
+<aside class="sidebar">
+<h4>{{ T "related_title" }}</h4>
+<div class="widget__content">
+		<ul class="widget__list">
+	{{ range . }}
+	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+	{{ end }}
+</ul>
+</div>
+<br/>
+</aside>
+{{ end }}
+{{- end }}

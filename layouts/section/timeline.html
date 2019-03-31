@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="main" role="main">
+	<div class="content post__content clearfix">
+		{{ with .Site.GetPage "/timeline/timeline.md" }}
+		{{ .Content }}
+		{{ end }}
+	</div>	
+</main>
+{{ end }}
+
+{{ define "sidebar" }}
+&nbsp;
+{{ end }}

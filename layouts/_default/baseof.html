@@ -17,6 +17,11 @@
 	{{ end -}}
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+	{{ if .Site.Params.share_open }}
+	<link rel="stylesheet" href="{{ "css/share.min.css" | relURL }}">
+	<script src="/js/social-share.min.js"></script>
+	<script src="/js/qrcode.js"></script>
+	{{ end }}
 	{{ range .Site.Params.customCSS -}}
 	<link rel="stylesheet" href="{{ . | relURL }}">
 	{{- end }}
@@ -44,5 +49,11 @@
 	</div>
 <script async defer src="{{ "js/menu.js" | relURL }}"></script>
 {{- partial "mathjax.html" . -}}
+{{ if .Site.Params.baidu_push }} 
+  {{ partial "baidu_push.html" . }}
+{{ end }}
+{{ if .Site.Params.baidu_count }} 
+  {{ partial "baidu_count.html" . }}
+{{ end }}
 </body>
 </html>

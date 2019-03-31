@@ -1,0 +1,83 @@
+# General
+- id: read_more
+  translation: 阅读全文…
+
+- id: menu_label
+  translation: 选择
+
+- id: sidemenu_title
+  translation: 选择
+
+# Post meta
+- id: meta_lastmod
+  translation: 最后修改
+
+- id: meta_translations
+  translation: 翻译
+
+# Table of Contents
+- id: toc_title
+  translation: 大纲视图
+
+# Post nav
+- id: post_nav_prev
+  translation: 前一篇
+
+- id: post_nav_next
+  translation: 后一篇
+
+# Authorbox
+- id: authorbox_name
+  translation: 关于 {{ .Count }}
+
+# Sidebar
+- id: sidebar_warning
+  translation: 警告
+
+- id: sidebar_recommendation
+  translation: 请至少选择一个侧边栏组件
+
+# Search widget
+- id: search_placeholder
+  translation: 搜索...
+
+# Languages widget
+- id: languages_title
+  translation: 语言
+
+# Categories widget
+- id: categories_title
+  translation: 分类
+
+# Recent Posts widget
+- id: recent_title
+  translation: 近期文章
+
+# Social widget
+- id: social_title
+  translation: 社群
+
+# Tags List widget
+- id: tags_title
+  translation: 标签
+
+# Footer
+- id: footer_credits
+  translation: "使用 <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> 技术与 <a href=\"https://github.com/kingfsen/Mainroad/\" rel=\"nofollow noopener\" target=\"_blank\">Mainroad</a>主题"
+
+# 404
+- id: 404_title
+  translation: 404. 糟糕！我们似乎无法找到您要的页面。
+
+- id: 404_text
+  translation: "您要找的页面可能已经被移除、删除或者不存在。"
+
+- id: 404_linktext
+  translation: "回到首页"
+
+- id: related_title
+  translation: "相关文章"
+ 
+- id: post_word_show
+  translation: "字" 
+  

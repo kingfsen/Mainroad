@@ -1,0 +1,6 @@
+{{ if and .Site.Params.isso_open (not .Site.DisqusShortname) }}
+{{ $prefix := .Site.Params.isso.prefix | default "isso" }}
+{{ $id := .Site.Params.isso.id| default "isso-thread" }}
+<script data-isso="/{{ $prefix }}/" src="/{{ $prefix }}/js/embed.min.js"></script>
+<section id="{{ $id }}"></section>
+{{ end }}

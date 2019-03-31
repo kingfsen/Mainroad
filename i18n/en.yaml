@@ -63,7 +63,7 @@
 
 # Footer
 - id: footer_credits
-  translation: "Generated with <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and <a href=\"https://github.com/Vimux/Mainroad/\" rel=\"nofollow noopener\" target=\"_blank\">Mainroad</a> theme."
+  translation: "Generated with <a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a> and <a href=\"https://github.com/kingfsen/Mainroad/\" rel=\"nofollow noopener\" target=\"_blank\">Mainroad</a> theme."
 
 # 404
 - id: 404_title
@@ -74,3 +74,9 @@
 
 - id: 404_linktext
   translation: "main page"
+  
+- id: related_title
+  translation: "See Also"
+  
+- id: post_word_show
+  translation: "words" 
