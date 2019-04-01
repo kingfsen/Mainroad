@@ -34,13 +34,16 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
 - 文章列表
 
+
   ![mobile_list](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_list.jpg)
 
 - 文章分享
 
+
   ![mobile_share](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_share.jpg)
 
 - 文章评论区
+
 
   ![mobile_comment](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_comment.jpg)
 
