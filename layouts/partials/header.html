@@ -5,6 +5,9 @@
 				<div class="logo__title">{{ .Site.Title }}</div>
 				{{ with .Site.Params.subtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
 			</a>
+			{{ if .Site.Params.share_top_show }}
+			<div class="float_right">{{ partial "share.html" . }}</div>
+			{{ end }}
 		</div>
 		{{ partial "menu.html" . }}
 	</div>
