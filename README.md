@@ -1,6 +1,7 @@
 # Mainroad
 
-**Mainroad** is a responsive, simple, clean and content-focused [Hugo](https://gohugo.io/) theme based on the [MH Magazine lite](https://wordpress.org/themes/mh-magazine-lite/) WordPress theme by [MH Themes](https://www.mhthemes.com/).
+**Mainroad** 
+I forked the theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
 **[Demo (Fast update)](https://hugothemes.gitlab.io/mainroad/)** | [Standart Demo](https://themes.gohugo.io/theme/mainroad/)
 
