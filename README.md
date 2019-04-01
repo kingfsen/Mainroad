@@ -1,9 +1,8 @@
 # Mainroad
 
-**Mainroad** 
-I forked the theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
+I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
-**[Demo (Fast update)](https://hugothemes.gitlab.io/mainroad/)** | [Standart Demo](https://themes.gohugo.io/theme/mainroad/)
+[在线预览](https://youendless.com)
 
 ![screenshot](https://github.com/Vimux/mainroad/blob/master/images/screenshot.png)
 
