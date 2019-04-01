@@ -132,10 +132,11 @@ textarea {
 /* Button */
 .btn {
 	padding: 5px 10px;
-	font-weight: 700;
-	color: #fff;
+	font-weight: 500;
+	color: #ffffff;
 	white-space: pre-line;
-	background: #2a2a2a;
+	background: #707070;
+	border-radius: 5px;
 }
 
 .btn:hover {
@@ -444,7 +445,7 @@ select {
 	padding: .625rem .9375rem;
 	font-weight: 700;
 	text-align: right;
-	text-transform: uppercase;
+/*	text-transform: uppercase; */
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -711,8 +712,8 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	float: left;
 	margin: 0 6px 6px 0;
 	margin: 0 .375rem .375rem 0;
-	text-transform: uppercase;
-	background: #2a2a2a;
+/**	text-transform: uppercase;
+	background: #2a2a2a; **/
 }
 
 .tags__item:hover {

@@ -80,3 +80,6 @@
   
 - id: post_word_show
   translation: "words" 
+  
+- id: friend_link_title
+  translation: "friend link"

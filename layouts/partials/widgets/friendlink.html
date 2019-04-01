@@ -1,0 +1,15 @@
+{{- if .Site.Params.friend_link_open }}
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">{{ T "friend_link_title" }}</h4>
+	<div class="widget-social__item widget__item">
+		
+		{{- range .Site.Params.friendlink }}
+		<a class="widget-social__link widget__link btn" title="{{ .title }}" rel="noopener noreferrer" href="{{ .link }}" target="_blank">
+			<svg class="widget-social__link-icon icon-telegram" viewBox="0 0 132 110" width="24" height="24">
+			<path fill="#ddd" d="M50 103c-4 0-3-1-5-5L34 60l88-52"/><path fill="#aaa" d="M50 103c3 0 4-1 6-3l16-16-20-12"/><path fill="#fff" d="M52 72l48 36c6 3 10 2 11-5l20-93c2-8-3-11-8-9L7 45c-8 4-8 8-1 10l29 9 69-43c3-2 6-1 4 1"/></svg>
+			<span>{{ .title }}</span>
+		</a>
+		{{- end }}
+	</div>
+</div>
+{{- end }}

@@ -81,3 +81,6 @@
 - id: post_word_show
   translation: "字" 
   
+- id: friend_link_title
+  translation: "友情链接"
+  

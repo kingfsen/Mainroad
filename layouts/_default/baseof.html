@@ -52,7 +52,7 @@
 {{ if .Site.Params.baidu_push }} 
   {{ partial "baidu_push.html" . }}
 {{ end }}
-{{ if .Site.Params.baidu_count }} 
+{{ if isset .Site.Params "baidu_count_id" }} 
   {{ partial "baidu_count.html" . }}
 {{ end }}
 </body>
