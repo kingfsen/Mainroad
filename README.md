@@ -4,53 +4,61 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
 [在线预览](https://youendless.com)
 
-![screenshot](https://github.com/Vimux/mainroad/blob/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/pc_index.png)
 
-**Features:**
+这个主题开发者模板设计的非常规整，整体简洁，特别适合个人博客系统。个人在此基础上修改了部分样式，同时新增了部分功能，目前还在DIY中，作为一个后端开发者，还在努力学习前端技术。
 
-+ Hugo internal templates (Open Graph, Twitter Cards, Disqus, Google Analytics)
-+ Responsive menu
-+ Secondary menus
-+ SVG icons
-+ Theme options (Sidebar position, Author Box, Post Navigation) available through config.toml file parameters
-+ Table of Contents
-+ MathJax
+## 主题变化
 
-**Browser support:**
+**新增部分**
 
-+ **Desktop:** IE10+, Chrome, Firefox, Safari
-+ **Mobile:** Android browser (on Android 4.4+), Safari (on iOS 7+), Google Chrome, Opera mini
++ 增加了中文语言展示
++ 侧边栏增加了友情链接(样式探索中)
++ 增加了多渠道分享按钮，使用的js插件来自[share.js](!https://github.com/overtrue/share.js)，在此基础上调整了一些样式，本主题安装share.js教程        点击[此处](https://youendless.com/post/share_js/)查看，通过参数控制网站顶部以及文章尾部是否显示分享按钮。
++ 文章尾部增加了`相关文章`功能，主要通过tags匹配相关文章。
++ 原主题默认支持Disqus评论系统，考虑到国内无法翻墙，加入了isso评论系统支持，默认不开启，DisqusShortName为空，并且参数isso_open = true才会开启        isso， isso需要自己搭建后端服务，具体教程详见[开源评论系统isso搭建](https://youendless.com/post/isso/)，几分钟就能搞定，相对比较简单，isso支   持匿名评论以及admin管理等特色。
++ Hugo内置支持了Syntax Highlighter代码高亮，同时支持使用Pygments样式，考虑到写Markdown文件时不方便用Hugo的特定渲染语法，我加入了Prims的支持，
+  Prims开启了显示行数，同时右上角支持一键copy代码功能，如果不想用prims高亮功能，则在写Markdown文件时代码块标点之后不要加语言名字。
+  \```Go 
+  这种会自动加了高亮样式。
++ 增加了百度网页自动推送功能，但是经常会被谷歌浏览器截断，通过参数baidu_push控制是否开启推送。
++ 增加了百度统计功能，如果设置了baidu_count_id，则自动开启了百度统计功能，baidu_count_id是你的网站在百度统计分配的。
 
-Other browsers (like Opera on Blink engine) are also supported, but not tested. Support for older versions of Internet Explorer (IE9 and below) ended.
+**修改部分**
++ 修改了内容区的宽度大小，由1080改成了1280，稍微调整了左右两边的占比比例
++ 修改了tags的显示样式(样式正在探索中)
++ 去除了文章内容页面展示的缩略图原图
++ 文章Title下面增加了字数统计(icon待更换)
 
-## Installation
+手机版样式
 
-In your Hugo site `themes` directory, run:
+- 文章列表
 
-```
-$ git clone https://github.com/vimux/mainroad
-```
+  ![mobile_list](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_list.jpg)
 
-Next, open `config.toml` in the base of the Hugo site and ensure the theme option is set to `mainroad`:
+- 文章分享
 
-```
-theme = "mainroad"
-```
+  ![mobile_share](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_share.jpg)
 
-For more information read the official [setup guide](https://gohugo.io/themes/installing-and-using-themes/) of Hugo.
+- 文章评论区
+
+  ![mobile_comment](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_comment.jpg)
+
 
 ## Configuration
 
-### Config.toml example
+配置参数解释说明
 
 ```toml
 baseurl = "/"
 title = "Mainroad"
-languageCode = "en-us"
+defaultContentLanguage = "zh-cn"
 paginate = "10" # Number of posts per page
 theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+hasCJKLanguage = true
+summaryLength = "145" 
 
 [Author] # Used in authorbox
   name = "John Doe"
@@ -75,13 +83,34 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   #mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" # Specify MathJax path
   #mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   customCSS = ["css/custom.css"] # Include custom CSS files
+  
+  post_related = true #是否开启 相关文章 索引功能
+  share_open = true #是否开启文章尾部分享
+  baidu_push = true #是否开启百度自动网页推送
+  baidu_count_id = "c79473" #百度统计id
+  isso_open = true # "是否开启isso评论系统"
+  friend_link_open = true #是否显示友情链接
+  share_top_show = true #是否展示菜单右上角分享按钮
+  
+[[Params.friendlink]]   #友情链接
+  link = "https://youendless.com"   #链接地址
+  title = "君无止境"                 #链接显示文字
+  desc = "一个专注于容器技术的博客"    #链接站点描述文字(暂未使用，待开发)
+  
+[[Params.friendlink]]
+  link = "https://youendless.com"
+  title = "君无止境"
+  desc = "一个专注于容器技术的博客"
+
+[Params.isso] #isso评论插件
+  prefix = "isso"  #请求的前缀，默认isso，那么isso服务的请求url则是baseURL/isso/，可以填写一个完整路径https://youendless.com/isso/
 
 [Params.sidebar]
   home = "right" # Configure layout for home page
   list = "left"  # Configure layout for list pages
   single = false # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages", "friendlink"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
@@ -101,49 +130,89 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   google_plus = "profileid"
 ```
 
-### Front Matter example
+## Demo完整的配置参数
 
-```yaml
----
-title: "Example article title"
-date: "2017-08-21"
-description: "Example article description"
-thumbnail: "img/placeholder.jpg" # Optional, thumbnail
-lead: "Example lead - highlighted near the title"
-disable_comments: false # Optional, disable Disqus comments if true
-authorbox: true # Optional, enable authorbox for specific post
-toc: true # Optional, enable Table of Contents for specific post
-mathjax: true # Optional, enable MathJax for specific post
-categories:
-  - "Category 1"
-  - "Category 2"
-tags:
-  - "Test"
-  - "Another test"
-menu: main # Optional, add page to a menu. Options: main, side, footer
----
+```toml
+LanguageCode = "zh-cn"
+title = "君无止境"
+hasCJKLanguage = true
+theme = "Mainroad"
+summaryLength = "145"
+defaultContentLanguage = "zh-cn"
+    
+[Params]
+  description = "专注于Java、Go、Kubernetes、Docker、Harbor、Helm等容器相关技术方向开发"
+  subtitle = "代码沉淀技术，技术成就梦想!   Hugo、Java、Go、Docker、Harbor、Kubernetes~"
+  keywords = "youendless,君无止境Hugo,Java,Go,Kubernetes,Docker,Harbor,Helm,容器技术,博客,静态博客"
+  readmore = true
+  dateformat = "2006-01-02"
+  post_navigation = true
+  post_related = true
+  share_open = true
+  baidu_push = true
+  baidu_count_id = "1f38fa809"
+  authorbox = true
+  isso_open = true
+  friend_link_open = true
+  toc = true
+  share_top_show = true
+  
+[Author] # Used in authorbox
+  name = "文章作者kingfsen"
+  bio = "一个不会写Bug的后端开发工程师，擅长Java、Go等编程语言。"
+  avatar = "img/avatar.png"
+  
+[[Params.friendlink]]
+  link = "https://youendless.com"
+  title = "君无止境"
+  desc = "一个专注于容器技术的博客"
+  
+[[Params.friendlink]]
+  link = "https://youendless.com"
+  title = "君无止境"
+  desc = "一个专注于容器技术的博客"
+  
+[Params.isso]
+  prefix = "isso"
+
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+  widgets = ["search", "languages", "recent", "categories", "taglist", "social", "friendlink"]
+
+[Params.widgets]
+  recent_num = 10
+  tags_counter = true
+
+[menu]
+[[menu.main]]
+  identifier = "post"
+	name = "博客"
+	title = "技术博客文章"
+	url = "/post/"
+
+[[menu.main]]
+  identifier = "about"
+	name = "关于我"
+	title = "博客作者的资料信息"
+	url = "/about/"
+	
+[[menu.main]]
+  identifier = "timeline"
+	name = "时间轴"
+	title = "博客创作时间轨迹"
+	url = "/timeline/"
+	
+[Params.widgets.social]
+  github = "kingfsen"
+  email = "qq.com"
+  
+[related]
+   threshold = 80
+   includeNewer = true
+   toLower = true
+   [[related.indices]]
+     name = "tags"
+	 weight = 100
 ```
-
-For more information about front matter variables read [Hugo Front Matter](https://gohugo.io/themes/installing-and-using-themes/) from Hugo official documentation.
-
-### Sidebar
-
-**Mainroad** comes with a configurable sidebar that can be on the left, on the right, or disabled. The default layout can be specified in the `[Params.sidebar]` section of the configuration. The position can be specified for home, list and single pages individually. Use the keys `home`, `list` and `single` with values `"left"`, `"right"` or `false`. The layout can be configured per page, by setting the `sidebar` parameter with one of the same values in the page's front matter.
-
-The sidebar consists of multiple widgets. Widgets can be enabled individually using the `widgets` key with a list of widget names as value. You can add your own widgets, by placing a template under `layouts/partials/widgets/<name>.html`. The list of widgets can be overwritten from a page's front matter.
-
-Some widget respect optional configuration. Have a look at the `[Params.widgets]` and `[Params.widgets.social]` sections in the example configuration above.
-
-### Menus
-
-**Mainroad** supports multiple menus. The `main` menu is fully responsive and displayed right under the site header. The secondary menus `side` and `footer` are displayed in a sidebar widget and the page footer. In order to add a page to a menu, add a `menu = <menu>` parameter to the pages frontmatter. You can also add a page to many menus by providing a list, e.g. `menu = [main, side, footer]`. Don't forget to enable the `sidemenu` widget in the widget configuration if you want to use the `side` menu.
-
-**Sidenote:** Please keep in mind that Mainroad menus don't support nested items (submenus).
-
-## Contributing
-
-Have you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/Vimux/mainroad/issues) to let me know. Or make directly a [pull request](https://github.com/Vimux/mainroad/pulls), but please respect the following [contributing guide](CONTRIBUTING.md).
-
-## License
-
-This theme is released under the [GPLv2 license](https://github.com/Vimux/mainroad/blob/master/LICENSE.md).
