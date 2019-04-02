@@ -12,40 +12,46 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
 **新增部分**
 
-+ 增加了中文语言展示
-+ 侧边栏增加了友情链接(样式探索中)
-+ 增加了多渠道分享按钮，使用的js插件来自[share.js](!https://github.com/overtrue/share.js)，在此基础上调整了一些样式，本主题安装share.js教程        点击[此处](https://youendless.com/post/share_js/)查看，通过参数控制网站顶部以及文章尾部是否显示分享按钮。
-+ 文章尾部增加了`相关文章`功能，主要通过tags匹配相关文章。
-+ 原主题默认支持Disqus评论系统，考虑到国内无法翻墙，加入了isso评论系统支持，默认不开启，DisqusShortName为空，并且参数isso_open = true才会开启        isso， isso需要自己搭建后端服务，具体教程详见[开源评论系统isso搭建](https://youendless.com/post/isso/)，几分钟就能搞定，相对比较简单，isso支   持匿名评论以及admin管理等特色。
-+ Hugo内置支持了Syntax Highlighter代码高亮，同时支持使用Pygments样式，考虑到写Markdown文件时不方便用Hugo的特定渲染语法，我加入了Prims的支持，
-  Prims开启了显示行数，同时右上角支持一键copy代码功能，如果不想用prims高亮功能，则在写Markdown文件时代码块标点之后不要加语言名字。
-  \```Go 
-  这种会自动加了高亮样式。
+- 增加了中文语言展示
+- 侧边栏增加了友情链接
+- 增加了一键分享功能，使用的JS插件是[share.js](!https://github.com/overtrue/share.js)，在此基础上调整了一些样式，Share.js插件安装请查看[此处](https://youendless.com/post/share_js/)
+- 文章结尾增加了 `相关文章` 链接功能，通过文章tags匹配相关联文章
+- 新增isso评论系统，默认不开启，原主题默认支持Disqus，如果DisqusShortName参数为空并且isso_open设置为true则开启isso功能。isso需要自己搭建后端服务，
+	具体搭建教程详见[开源评论系统isso搭建](https://youendless.com/post/isso/)，几分钟就能搞定，相对比较简单，评论数据落地在本地服务器，
+	同时支持匿名评论以及admin管理等特色。
++ Hugo内置了Syntax Highlighter代码高亮，同时支持使用Pygments样式，考虑到写Markdown文件时不方便用Hugo的特定渲染语法，加入了Prims的支持。
+	Prims能显示代码行数，同时右上角有一键复制代码代码功能按钮，如果不想用prims高亮功能，则在写Markdown文件时代码块标点之后不要加语言名字。
+	
+	```
+	\```Go
+		...code
+	
+	\```
+	```
+	
+	这时code会自动使用Prims代码高亮样式(请忽略展示中的`\`)，下面的则不会使用。
+	
+	```
+	\```
+		...code
+	\```
+	```
 + 增加了百度网页自动推送功能，但是经常会被谷歌浏览器截断，通过参数baidu_push控制是否开启推送。
 + 增加了百度统计功能，如果设置了baidu_count_id，则自动开启了百度统计功能，baidu_count_id是你的网站在百度统计分配的。
 
 **修改部分**
+
 + 修改了内容区的宽度大小，由1080改成了1280，稍微调整了左右两边的占比比例
 + 修改了tags的显示样式(样式正在探索中)
-+ 去除了文章内容页面展示的缩略图原图
++ 去除了文章内容页面显示缩略图原图
 + 文章Title下面增加了字数统计(icon待更换)
 
-手机版样式
 
-- 文章列表
+### 手机版预览
 
-
-  ![mobile_list](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_list.jpg)
-
-- 文章分享
-
-
-  ![mobile_share](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_share.jpg)
-
-- 文章评论区
-
-
-  ![mobile_comment](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_comment.jpg)
+| 文章列表   | 文章分享  | 文章评论  |
+| :----: | :----: | :----: |
+| ![mobile_list](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_list.jpg)  | ![mobile_share](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_share.jpg) | ![mobile_comment](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/mobile_comment.jpg) |
 
 
 ## Configuration
