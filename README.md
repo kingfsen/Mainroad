@@ -38,6 +38,7 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 	```
 + 增加了百度网页自动推送功能，但是经常会被谷歌浏览器截断，通过参数baidu_push控制是否开启推送。
 + 增加了百度统计功能，如果设置了baidu_count_id，则自动开启了百度统计功能，baidu_count_id是你的网站在百度统计分配的。
++ 增加一键回顶部按钮
 
 **修改部分**
 
