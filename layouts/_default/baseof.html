@@ -6,7 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	{{ if .Site.Params.to_top_show }}
+	<script src="/js/jquery.toTop.min.js"></script>
+	{{ end }}
 	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Params.Description }}{{end}}">
 	{{ .Hugo.Generator }}
 	{{ if .Site.Params.opengraph }}{{ template "_internal/opengraph.html" . }}{{ end }}
@@ -64,5 +67,11 @@
         $("pre code").parent().addClass("line-numbers")
     }())
 </script>
+{{ if .Site.Params.to_top_show }}
+<a class="to-top" style="background-color:#666;color:#fff;width:40px;height:40px;text-align:center;padding-top:3px;line-height:18px;">返回顶部</a>
+<script type="text/javascript">
+$('.to-top').toTop();
+</script>
+{{ end }}
 </body>
 </html>
