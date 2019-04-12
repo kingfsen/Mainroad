@@ -1,11 +1,46 @@
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
 <div class="pagination">
+	{{ $step := 5 }}
+	{{ if isset .Site.Params "paginate_step" }} 
+		{{ $step = .Site.Params.paginate_step }}
+	{{ end }}
+	{{ $cur := .Paginator.PageNumber }}
+	
+	
 	{{- if .Paginator.HasPrev }}
-	<a class="pagination__item pagination__item--prev btn" href="{{ .Paginator.Prev.URL }}">«</a>
+	<a class="pagination__item pagination__item--prev btn" href="{{ .Paginator.First.URL }}">«</a>
+	<a class="pagination__item pagination__item--prev btn" href="{{ .Paginator.Prev.URL }}">‹</a>
 	{{- end }}
-	<span class="pagination__item pagination__item--current">{{ .Paginator.PageNumber }}/{{ .Paginator.TotalPages }}</span>
+	
+	{{ $prevSeq := 1 }}
+	{{ $pos := (sub $cur $step ) }}
+	{{ $pos = sub $pos 1 }}
+	{{ if lt $pos 1 }} 
+		{{ $pos = 1 }}
+	{{ end }}
+	{{ range after $pos .Paginator.Pagers }}
+		{{ if and (le $prevSeq $step) (lt .PageNumber $cur) }}
+			<a class="pagination__item pagination__item btn" href="{{ .URL }}">{{ .PageNumber }}</a>
+		{{ end }}
+		{{ $prevSeq = (add $prevSeq 1) }}
+	{{ end }}
+	
+	<span class="pagination__item pagination__item--current">{{ .Paginator.PageNumber }}</span>
+		
+	{{ $nextSeq := 1 }}
+	{{ range after $cur .Paginator.Pagers }}
+		{{ if le $nextSeq $step }}
+			<a class="pagination__item pagination__item btn" href="{{ .URL }}">{{ .PageNumber }}</a>
+		{{ end }}
+		{{ $nextSeq = (add $nextSeq 1) }}
+	{{ end }}
+	
 	{{- if .Paginator.HasNext }}
-	<a class="pagination__item pagination__item--next btn" href="{{ .Paginator.Next.URL }}">»</a>
+	<a class="pagination__item pagination__item--next btn" href="{{ .Paginator.Next.URL }}">›</a>
+	<a class="pagination__item pagination__item--next btn" href="{{ .Paginator.Last.URL }}">»</a>
 	{{- end }}
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;<span>共&nbsp;{{ .Paginator.TotalPages }}&nbsp;页</span>
+	
 </div>
 {{ end }}
