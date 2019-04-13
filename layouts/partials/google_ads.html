@@ -1,0 +1,9 @@
+{{ if isset .Site.Params "google_ads_id" }}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "{{- .Site.Params.google_ads_id -}}",
+      enable_page_level_ads: true
+    });
+  </script>
+{{ end }}
