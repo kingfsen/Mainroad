@@ -40,9 +40,10 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 + 增加了百度统计功能，如果设置了baidu_count_id，则自动开启了百度统计功能，baidu_count_id是你的网站在百度统计分配的。
 + 增加一键回顶部按钮
 + 自定义显示当前页前后页码数量，最后页、首页数量，通过参数paginate_step设置，不设置默认值5。
-+ 增加google广告，设置google_ads_id即可。
 
 ![page](https://raw.githubusercontent.com/kingfsen/blog-images/master/blog/page.png)
+
++ 增加google广告，设置google_ads_id即可。
 
 **修改部分**
 
