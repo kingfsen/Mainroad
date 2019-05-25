@@ -83,3 +83,6 @@
   
 - id: friend_link_title
   translation: "friend link"
+  
+- id: read_time_unit
+  translation: "minutes"

@@ -1,10 +1,29 @@
 {{ define "main" }}
 <main class="main" role="main">
-	<div class="content post__content clearfix">
-		{{ with .Site.GetPage "/timeline/timeline.md" }}
-		{{ .Content }}
-		{{ end }}
-	</div>	
+	<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <div class="main-timeline">
+                <br/>
+                {{- $recent := where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "post")) }}
+                {{- if $recent }}
+                    {{- range $recent }}
+                        
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">{{- .Date.Format "2006-01-02" -}}</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">{{ .Title }}</h3>
+                                <p class="description">总字数: {{- .WordCount -}}&nbsp;&nbsp;&nbsp;预计:{{- .ReadingTime -}}分钟</p>
+                            </div>
+                        </div>                   
+                    {{- end }}
+                {{- end }}
+                <br/>
+            </div>
+        </div>
+    </div>
+</div> 
 </main>
 {{ end }}
 

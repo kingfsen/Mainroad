@@ -84,3 +84,6 @@
 - id: friend_link_title
   translation: "友情链接"
   
+- id: read_time_unit
+  translation: "分钟"
+  
