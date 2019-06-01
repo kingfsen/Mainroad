@@ -739,7 +739,8 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 /* Table of Contents */
 .toc {
 	margin-bottom: 20px;
-	font-weight: 700;
+	font-weight: 600;
+	font-size: 16px;
 	color: #7a8288;
 	background: #fff;
 	border-color: #ebebeb;
@@ -748,22 +749,30 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	border-right-width: 1px;
 	border-bottom-width: 0;
 	border-left-width: 1px;
+	border-radius: 2px;
 }
 
 .toc__title {
 	padding: 5px 10px;
-	color: #fff;
+	#color: #fff;
+	color: #2a2a2a;
 	text-transform: uppercase;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;
-	background: #2a2a2a;
+	background: #f5f2f0;
+}
+
+.toc__menu {
+  display: none;
 }
 
 .toc__menu ul {
 	margin: 0;
+	font-weight: 600;
+	font-size: 13px;
 	list-style: none;
 }
 
@@ -795,7 +804,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .toc__menu a:hover {
-	text-decoration: underline;
+#	text-decoration: underline;
 }
 
 /* Author Box */

@@ -1,8 +1,21 @@
 {{ if .Param "toc" }}
-<div class="post__toc toc">
-	<div class="toc__title">{{ T "toc_title" }}</div>
-	<div class="toc__menu">
-		{{ .TableOfContents }}
-	</div>
-</div>
+  {{ if hasPrefix .TableOfContents "<nav id=" }}
+    <div class="toc">
+        <div class="toc__title"><span id="toc_menu_tip">展开书签</span></div>
+        <div class="toc__menu">
+          {{ .TableOfContents }}
+        </div>  
+    </div>
+    <script type="text/javascript">
+    $(".toc__title").click( function () {
+      if($(".toc__menu").css('display') == 'none') {
+        $(".toc__menu").show(); 
+        $("#toc_menu_tip").html("收起书签");
+      } else {
+        $(".toc__menu").hide(); 
+        $("#toc_menu_tip").html("展开书签");
+      }
+    });
+    </script>
+  {{ end }}
 {{ end }}
