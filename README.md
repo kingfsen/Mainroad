@@ -1,4 +1,5 @@
 **推荐一款便宜实惠的国外云服务器，只需验证一个邮箱，支持支付宝付款，搭建网站无需任何备案审核**
+**按量付费，首次充10刀(70元)美元然后送50刀，很划算！**
 
 <a href="https://www.vultr.com/?ref=8356490"><img src="https://www.vultr.com/media/banners/banner_728x90.png" width="728" height="90"></a>
 
