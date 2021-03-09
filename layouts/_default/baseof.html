@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ "/js/jquery.min.js" | relURL }}"></script>
 	{{ if .Site.Params.to_top_show }}
-	<script src="/js/jquery.toTop.min.js"></script>
+	<script src={{ "/js/jquery.toTop.min.js" | relURL }}></script>
 	{{ end }}
 	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{else}}{{ .Params.Description }}{{end}}">
 	{{ .Hugo.Generator }}
@@ -25,8 +25,8 @@
 	
 	{{ if .Site.Params.share_open }}
 	<link rel="stylesheet" href="{{ "css/share.min.css" | relURL }}">
-	<script src="/js/social-share.min.js"></script>
-	<script src="/js/qrcode.js"></script>
+  <script src="{{ "/js/social-share.min.js" | relURL }}"></script>
+  <script src="{{ "/js/qrcode.js" | relURL }}"></script>
 	{{ end }}
 	{{ range .Site.Params.customCSS -}}
 	<link rel="stylesheet" href="{{ . | relURL }}">
