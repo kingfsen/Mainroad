@@ -1,0 +1,21 @@
+{{ if and (isset .Site.Params "promotional")  (in (slice "post" "posts") .Type) }}
+<h2 id="openeuler-kernel-sig-沟通交流渠道">openEuler Kernel SIG 沟通交流渠道</h2>
+<hr>
+<li>{{ if isset .Site.Params.promotional "description" }}{{.Site.Params.promotional.description}}{{ else }}{{.Site.Title}}{{ end }}</a></li>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">微信群</th>
+<th style="text-align:center">管理员</th>
+<th style="text-align:center">公众号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><img src="{{.Site.Params.promotional.groupChat}}" alt="GROUP_CHAT"></td>
+  <td style="text-align:center"><img src="{{.Site.Params.promotional.groupAdmin}}" alt="GROUP_ADMIN"></td>
+  <td style="text-align:center"><img src="{{.Site.Params.promotional.groupWP}}" alt="GROUP_WP"></td>
+</tr>
+</tbody>
+</table>
+{{ end }}
