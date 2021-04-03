@@ -4,6 +4,10 @@
 		<div class="footer__copyright">
 			&copy; {{ now.Format "2006" }} {{  .Site.Params.copyright | default .Site.Title  }}.
 			<span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span>
+      <br>
+      <span id="busuanzi_container_site_pv">本站访问量：<span id="busuanzi_value_site_pv"></span>次</span>
+      &nbsp;
+      <span id="busuanzi_container_site_uv">您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者</span>
 		</div>
 	</div>
 </footer>

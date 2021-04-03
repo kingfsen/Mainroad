@@ -52,12 +52,40 @@ I forked this theme from [Vimux/Mainroad](https://github.com/Vimux/Mainroad)
 
 + 增加google广告，设置google_ads_id即可。
 
+
++ 添加了归档页面
+
+博客目录下添加 archives.md, `content/post/archives.md`
+内容如下
+
+```cpp
+---
+title: "文章归档"
+layout: archives
+hidden: true
+type: posts
+summary: 历史文章按照年月归档.
+url: /archives/
+---
+```
+
+访问博客主页的 archives 目录即可查看归档页面.
+
+也可以显式添加到 menu 中, 则在配置文件 config.toml 中添加如下内容:
+
+[[menu.main]]
+  identifier = "archives"
+    name = "归档"
+    title = "历史归档页面"
+    url = "/archives/"
+
 **修改部分**
 
 + 修改了内容区的宽度大小，由1080改成了1280，稍微调整了左右两边的占比比例
 + 修改了tags的显示样式(样式正在探索中)
 + 去除了文章内容页面显示缩略图原图
 + 文章Title下面增加了字数统计(icon待更换)
+
 
 
 ### 手机版预览
