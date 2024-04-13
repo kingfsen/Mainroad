@@ -19,7 +19,7 @@
 	{{ with .OutputFormats.Get "rss" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"> -->
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">	
 	<link rel="stylesheet" type="text/css" href="{{ "css/highlight.css" | relURL }}">
 	

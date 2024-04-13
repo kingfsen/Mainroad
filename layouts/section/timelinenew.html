@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main class="main" role="main">
+	<div class="container">
+    <div class="row">
+		<div class="timeline-small">
+			<div class="timeline-small-body">
+				<ul>
+					{{- $recent := where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "post")) }}
+						{{- if $recent }}
+							{{- range $recent }}
+							<li>
+								<div class="bullet pink"></div>
+								<div class="date">{{- .Date.Format "2006-01-02" -}}</div>
+								<div class="desc">
+									<h3><a href='{{- .RelPermalink -}}'>{{ .Title }}</a></h3>
+									<h4>总字数: {{- .WordCount -}}&nbsp;&nbsp;&nbsp;预计:{{- .ReadingTime -}}分钟</h4>
+								</div>
+							</li>
+								
+							{{- end }}
+					{{- end }}
+				</ul>
+			</div>
+		</div>
+    </div>
+</div> 
+</main>
+{{ end }}
+
+{{ define "sidebar" }}
+&nbsp;
+{{ end }}

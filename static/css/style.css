@@ -1202,9 +1202,18 @@ textarea {
 	}
 
 	.logo {
-		text-align: center;
+		padding: 25px;
 	}
-
+	
+	.logo__item {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.logo__img {
+		max-height: 256px;
+	}
+	
 	.logo__title {
 		font-size: 24px;
 		font-size: 1.5rem;
@@ -1291,23 +1300,7 @@ textarea {
     margin-top: 13px;
 }
 .main-timeline .timeline:first-child{ margin-top: 0; }
-.main-timeline .timeline:before,
-.main-timeline .timeline:after{
-    content: "";
-    display: block;
-    width: 100%;
-    clear: both;
-}
-.main-timeline .timeline:before{
-    content: "";
-    width: 100%;
-    height: 100%;
-#    box-shadow: -8px 0 5px -5px rgba(0, 0, 0, 0.5) inset;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-}
+
 .main-timeline .timeline-icon{
     width: 210px;
     height: 210px;
@@ -1322,7 +1315,6 @@ textarea {
     bottom: 0;
     right: 0;
     z-index: 1;
-    transform: rotate(45deg);
 }
 .main-timeline .year{
     display: block;
@@ -1337,12 +1329,11 @@ textarea {
     font-weight: bold;
     color: #f44556;
     text-align: center;
-    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    transform: rotate(-45deg);
+	transform: rotate(-15deg);
 }
 .main-timeline .timeline-content{
     width: 35%;
@@ -1353,11 +1344,12 @@ textarea {
     z-index: 1;
     position: relative;
     border-radius: 10px;
+	margin-top: -100px;
 }
 .main-timeline .timeline-content:before{
     content: "";
     width: 20%;
-    height: 15px;
+    height: 2px;
     background: #f44556;
     position: absolute;
     top: 50%;
@@ -1379,7 +1371,7 @@ textarea {
 }
 .main-timeline .timeline:nth-child(2n):before{  }
 .main-timeline .timeline:nth-child(2n) .timeline-icon{ transform: rotate(-135deg); }
-.main-timeline .timeline:nth-child(2n) .year{ transform: rotate(135deg); }
+.main-timeline .timeline:nth-child(2n) .year{ transform: rotate(15deg); }
 .main-timeline .timeline:nth-child(2n) .timeline-content{ float: left; }
 .main-timeline .timeline:nth-child(2n) .timeline-content:before{
     left: auto;
@@ -1433,7 +1425,7 @@ textarea {
         transform: rotate(135deg);
     }
     .main-timeline .year,
-    .main-timeline .timeline:nth-child(2n) .year{ transform: rotate(-135deg); }
+    .main-timeline .timeline:nth-child(2n) .year{ transform: rotate(-25deg); }
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content{
         width: 100%;
